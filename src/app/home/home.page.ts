@@ -10,6 +10,7 @@ export class HomePage {
   squares: string[];
   xIsNext: boolean;
   winner: string;
+  old: boolean;
 
   constructor() {}
 
@@ -21,6 +22,7 @@ export class HomePage {
     this.squares = Array(9).fill(null);
     this.winner = null;
     this.xIsNext = true;
+    this.old = false;
   }
 
   get player() {
@@ -34,6 +36,10 @@ export class HomePage {
     }
 
     this.winner = this.calculateWinner();
+    console.log(this.squares);
+    if(this.squares.find(x => x === null) === undefined){
+      this.old = true;
+    }
   }
 
   calculateWinner() {
@@ -57,6 +63,7 @@ export class HomePage {
         return this.squares[a];
       }
     }
+
     return null;
   }
 

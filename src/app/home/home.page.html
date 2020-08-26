@@ -13,8 +13,10 @@
       <ion-card-subtitle>Jogada: {{ player }}</ion-card-subtitle>
       <ion-card-title *ngIf="winner">O jogador {{ winner }} venceu!</ion-card-title>
     </ion-card-header>
-  
-    <ion-card-content>
+    
+    <h3 *ngIf="old" >Deu Velha/empate</h3>
+
+    <ion-card-content *ngIf="!winner">
       <ion-grid>
         <ion-row>
           <ion-col size="4" *ngFor="let val of squares; let i = index">
@@ -29,7 +31,7 @@
   </ion-card>
 
 
-  <ion-button expand="block" color="dark" (click)="newGame()">Novo Jogo</ion-button>
+  <ion-button expand="block" color="dark" (click)="newGame()">Reiniciar Jogo</ion-button>
 
 
 </ion-content>
