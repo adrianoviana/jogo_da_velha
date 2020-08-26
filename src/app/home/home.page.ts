@@ -36,7 +36,6 @@ export class HomePage {
     }
 
     this.winner = this.calculateWinner();
-    console.log(this.squares);
     if(this.squares.find(x => x === null) === undefined){
       this.old = true;
     }

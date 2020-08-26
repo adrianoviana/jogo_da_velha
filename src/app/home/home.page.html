@@ -14,7 +14,7 @@
       <ion-card-title *ngIf="winner">O jogador {{ winner }} venceu!</ion-card-title>
     </ion-card-header>
     
-    <h3 *ngIf="old" >Deu Velha/empate</h3>
+    <h3 *ngIf="old && !winner" >Deu Velha/empate</h3>
 
     <ion-card-content *ngIf="!winner">
       <ion-grid>
